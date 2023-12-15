@@ -2,7 +2,7 @@
 Cucumber-BDD-Automation-Framework
 Behaviour Driven Development Cucumber - Selenium based automation framework including cucumber reports.
  Steps to run at your system:
-• Install InteliiJ IDE • Clone the repository using "git clone " • Run from src/test/java/com/reddit/runner/RunCuke.java–Please take path from your project.do not copy this path
+• Install InteliiJ IDE •Selenium and Java17 and Clone the repository using "git clone " • Run from src/test/java/com/reddit/runner/RunCuke.java–Please take path from your project.do not copy this path
  Steps to view the report
 • To generate report, use this path - target/cucumber-reports/cucumber-html-report.html
 Steps : Go to Target folder -> cucumber Report ->right click on report.html -> opening -> browser
