@@ -3,9 +3,7 @@ package com.reddit.pages;
 import com.reddit.utility.Utility;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -39,7 +37,6 @@ public class LoginPage extends Utility {
 
     public void sendTextToPasswordField() {
         sendTextToElement(passWord, "Daylight3953");
-
     }
     JavascriptExecutor jse = (JavascriptExecutor) driver;
 

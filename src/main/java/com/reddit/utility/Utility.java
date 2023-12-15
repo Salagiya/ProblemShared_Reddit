@@ -5,17 +5,13 @@ import com.google.common.base.Function;
 import com.reddit.browserfactory.ManageBrowser;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
-
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
-import java.util.List;
 
 public class Utility extends ManageBrowser {
 
@@ -50,24 +46,6 @@ public class Utility extends ManageBrowser {
 
     public void sendTextToElement(WebElement element, String str) {
         element.sendKeys(str);
-    }
-
-    //*************************** Alert Methods ***************************************//
-
-    public void switchToAlert() {
-        driver.switchTo().alert();
-    }
-
-    public void acceptAlert() {
-        driver.switchTo().alert().accept();
-    }
-
-    public void dismissAlert() {
-        driver.switchTo().alert().dismiss();
-    }
-
-    public String getTextFromAlert() {
-        return driver.switchTo().alert().getText();
     }
 
     // wait method
@@ -118,7 +96,6 @@ public class Utility extends ManageBrowser {
         return destination;
     }
 
-
     public static String takeScreenShot(String fileName) {
         String filePath = System.getProperty("user.dir") + "/test-output/html/";
         TakesScreenshot screenshot = (TakesScreenshot) driver;
@@ -132,9 +109,6 @@ public class Utility extends ManageBrowser {
         }
         return destination;
     }
-
-
-
 
         }
 

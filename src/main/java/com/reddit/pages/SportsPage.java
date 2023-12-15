@@ -3,7 +3,6 @@ package com.reddit.pages;
 import com.reddit.utility.Utility;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -21,10 +20,13 @@ public class SportsPage extends Utility {
     @FindBy(xpath = "//h3[contains(@class,'_eYtD2XCVieq6emjKBH3m _2SdHzo12ISmrC8H86TgSCp')]")
     WebElement topPostTitle;
 
+    @CacheLookup
+    @FindBy(xpath = "//div[@id='vote-arrows-t3_18ib2er']//button[@data-click-id='upvote']")
+    WebElement secondPostVoteButton;
+
     public void printTopPostTitle() {
         String topPostTitleText = topPostTitle.getText();
         System.out.println("Top-most post title: " + topPostTitleText);
-
     }
 
     public void downVoteTheSecondPost() throws InterruptedException {
@@ -33,7 +35,6 @@ public class SportsPage extends Utility {
 
         js.executeScript("window.scrollBy(0,500)");
         Thread.sleep(3000);
-        WebElement secondPostVoteButton = driver.findElement(By.xpath("//div[@id='vote-arrows-t3_18ib2er']//button[@data-click-id='upvote']")); // Adjust the XPath to match your webpage structure
 
         String currentButtonState = secondPostVoteButton.getAttribute("data-click-id");
         System.out.println(currentButtonState);

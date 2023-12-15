@@ -1,7 +1,6 @@
 package com.reddit.pages;
 
 import com.reddit.utility.Utility;
-
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
@@ -19,12 +18,10 @@ public class HomePage extends Utility {
     }
 
     JavascriptExecutor jse = (JavascriptExecutor) driver;
-
     public void clickOnAcceptAllCookiesBtnJs() {
         WebElement acceptCookie = (WebElement) jse.executeScript("return document.querySelector(\"body > shreddit-app > shreddit-async-loader:nth-child(6) > reddit-cookie-banner\").shadowRoot.querySelector(\"#accept-all-cookies-button > button > span > span\")");
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", acceptCookie);
-
     }
 
     @CacheLookup
